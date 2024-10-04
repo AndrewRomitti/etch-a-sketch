@@ -17,8 +17,13 @@ function createGrid(dim){
             div.style.width = (960/(dim*2)).toString()+"px";
             container.appendChild(div);
             div.addEventListener("mouseover", () => {
+                div.style.transition = "background-color 0s";
                 const rgb = "rgb("+Math.random()*255+","+Math.random()*255+","+Math.random()*255+")";
                 div.style.backgroundColor = rgb;
+            })
+            div.addEventListener("mouseout", () => {
+                div.style.transition = "background-color 5s ease";
+                div.style.backgroundColor = "white";
             })
         }
     }
